@@ -10,9 +10,9 @@ public class example : MonoBehaviour
         StartCoroutine(GetRequest("http://127.0.0.0:5000/"));
     }
 
-    IEnumerator GetRequest(string url)
+    IEnumerator GetRequest(string uri)
     {
-        using(UnityWebRequest webRequest = UnityWebRequest.Get(url))
+        using(UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
             yield return webRequest.SendWebRequest();
             if(webRequest.isNetworkError)
